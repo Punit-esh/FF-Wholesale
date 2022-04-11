@@ -1,0 +1,234 @@
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  max-width: 1200px;
+  margin: auto;
+  color: #000000;
+  padding-bottom: 30px;
+}
+
+.printinvoice .navbar1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 25px;
+}
+
+@media print {
+  .printinvoice .navbar1 {
+    padding-top: 0px;
+  }
+}
+
+.printinvoice .navbar1 .logo {
+  max-width: 100%;
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: -o-pixelated;
+      image-rendering: pixelated;
+  image-rendering: -webkit-optimize-contrast;
+  height: 60px;
+  margin-right: 20px;
+}
+
+.printinvoice .navbar1 .invoiceno {
+  font-size: 20px;
+  font-weight: 500;
+  background: #cc0000;
+  color: #ffffff;
+  padding-inline: 20px;
+}
+
+.printinvoice .navbar2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.printinvoice .navbar2 .detail1 {
+  text-align: left;
+  margin-left: 25px;
+}
+
+.printinvoice .navbar2 .detail1 .orderno {
+  font-size: 12px;
+}
+
+.printinvoice .navbar2 .detail1 .order_required {
+  margin-top: 15px;
+  font-size: 12px;
+  letter-spacing: -0.4px;
+}
+
+.printinvoice .navbar2 .address {
+  text-align: right;
+  margin-right: 25px;
+  font-size: 14.2px;
+}
+
+.printinvoice .navbar2 .address .add1 {
+  font-size: 19px;
+}
+
+.printinvoice .address_shipingmethod {
+  font-weight: 500;
+  padding-inline: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 20px;
+}
+
+.printinvoice .address_shipingmethod > div {
+  width: 50%;
+}
+
+.printinvoice .address_shipingmethod > div > .address_shipingmethod_body {
+  padding: 10px;
+  border: 1px solid #7f7f7f;
+  border-top: 5px solid #cc0000;
+}
+
+.printinvoice .address_shipingmethod > div > .address_shipingmethod_body.mr {
+  margin-right: 10px;
+}
+
+.printinvoice .address_shipingmethod > div > .address_shipingmethod_body.ml {
+  margin-left: 10px;
+}
+
+.printinvoice .address_shipingmethod > div .address_shipingmethod_title {
+  color: #e67f7f;
+}
+
+.printinvoice .address_shipingmethod > div .address_shipingmethod_title.ml {
+  margin-left: 10px;
+}
+
+.printinvoice .table_data .row1 {
+  width: 5%;
+}
+
+.printinvoice .table_data .row2 {
+  width: 35%;
+}
+
+.printinvoice .table_data .row3,
+.printinvoice .table_data .row4,
+.printinvoice .table_data .row5,
+.printinvoice .table_data .row6,
+.printinvoice .table_data .row7,
+.printinvoice .table_data .row8 {
+  width: 10%;
+}
+
+.printinvoice .table_data .table_heading {
+  border-bottom: 5px solid #cc0000;
+  color: #e67f7f;
+  font-weight: 700;
+}
+
+.printinvoice .table_data .table_heading,
+.printinvoice .table_data .table_row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-inline: 25px;
+  font-size: 10px;
+  text-align: center;
+}
+
+.printinvoice .table_data .table_row {
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.printinvoice .table_data .table_row .row1,
+.printinvoice .table_data .table_row .row2,
+.printinvoice .table_data .table_row .row3,
+.printinvoice .table_data .table_row .row4,
+.printinvoice .table_data .table_row .row5,
+.printinvoice .table_data .table_row .row6,
+.printinvoice .table_data .table_row .row7,
+.printinvoice .table_data .table_row .row8 {
+  padding: 3px 5px;
+  border: 1px solid #000000;
+}
+
+.printinvoice .table_data .table_row .row2 {
+  text-align: left;
+}
+
+.header,
+.t-head,
+.footer,
+.t-foot {
+  height: 200px;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  background: #ffffff;
+  z-index: 100;
+}
+
+table {
+  width: 100%;
+  margin-right: 0px;
+}
+
+thead {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 49px;
+  background: #ffffff;
+}
+
+table {
+  page-break-inside: auto;
+}
+
+tr {
+  page-break-inside: avoid;
+}
+
+@page {
+  margin: 20mm;
+}
+
+@media print {
+  thead {
+    display: table-header-group;
+  }
+}
+/*# sourceMappingURL=main.css.map */
