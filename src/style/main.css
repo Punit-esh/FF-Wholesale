@@ -185,6 +185,122 @@ body {
   text-align: left;
 }
 
+.printinvoice .page_footer {
+  page-break-inside: avoid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-inline: 25px;
+  margin-top: 10px;
+}
+
+.printinvoice .page_footer > div {
+  width: 50%;
+}
+
+.printinvoice .page_footer .colm1_colm2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.printinvoice .page_footer .colm1_colm2 > div {
+  width: 50%;
+}
+
+.printinvoice .page_footer .colm1 > div,
+.printinvoice .page_footer .colm2 > div,
+.printinvoice .page_footer .colm3 > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.printinvoice .page_footer .colm1 > div > span:first-child,
+.printinvoice .page_footer .colm2 > div > span:first-child,
+.printinvoice .page_footer .colm3 > div > span:first-child {
+  text-align: left;
+}
+
+.printinvoice .page_footer .colm1 > div > span:last-child,
+.printinvoice .page_footer .colm2 > div > span:last-child,
+.printinvoice .page_footer .colm3 > div > span:last-child {
+  text-align: right;
+}
+
+.printinvoice .page_footer .colm1 {
+  padding-right: 20px;
+}
+
+.printinvoice .page_footer .colm3 {
+  padding-left: 20px;
+}
+
+.printinvoice .page_footer .colm1, .printinvoice .page_footer .colm2 {
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.printinvoice .page_footer .colm1 .line, .printinvoice .page_footer .colm2 .line {
+  height: 1px;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, right top, color-stop(70%, #000), to(#FFF));
+  background: linear-gradient(90deg, #000 70%, #FFF);
+  background-size: 20px;
+  margin-block: 5px;
+}
+
+.printinvoice .page_footer .bold {
+  font-weight: 900;
+}
+
+.printinvoice .page_footer .colm3 {
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.printinvoice .page_footer .colm3 span {
+  text-align: right !important;
+  margin-bottom: 5px;
+}
+
+.printinvoice .page_footer .colm3 span:last-child {
+  width: 30%;
+}
+
+.printinvoice .page_footer .colm3 span:first-child {
+  margin-left: auto;
+}
+
+.printinvoice .page_footer .colm3 .bold {
+  font-weight: 700;
+}
+
+.printinvoice .page_footer .colm3 .bold .red {
+  color: #CC0000;
+}
+
+.printinvoice .page_footer .colm3 .line {
+  height: 1px;
+  width: 100%;
+  background: #dfdfdf;
+  background-size: 20px;
+  margin-block: 5px;
+}
+
+.printinvoice .term {
+  padding-inline: 25px;
+  text-align: justify;
+  font-weight: 500;
+}
+
+.printinvoice .term span {
+  font-weight: 700;
+}
+
 .header,
 .t-head,
 .footer,

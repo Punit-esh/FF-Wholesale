@@ -20,6 +20,26 @@ export const Printinvoice = () => {
                 deliveryType: 'Pickup',
                 route: '-',
                 stop: '-',
+                TQ:96,
+                TST:'$46.21',
+                TCoT:'$8.90',
+                TCiT:'$0.00',
+                TT:'55.11',
+                OT:'(1) $13.99',
+                To:'(16) $271.83',
+                NTo:'(76) $1041.05',
+                Ci:'(3) $73.92',
+                payCheck:'$1,400.78',
+                payChangeback:'$0.00',
+                payoutstandingbal:'$0.00',
+                subT:'$1400.79',
+                shiping:'$0.00',
+                return:'$0.00',
+                discount:'$0.00',
+                grandT:'$1400.79',
+                deliverT:'$0.00',
+                collectedT:'$0.00',
+                T:'$1400.79',
                 tableData: [
                     ...'11111111111111111111111111111'.split("").map(
                         (el, i) => {
@@ -59,6 +79,26 @@ export const Printinvoice = () => {
         }, 2000)
     }, [])
     console.log(data);
+    // var doc = new jsPDF();
+    // var specialElementHandlers = {
+    //     '#editor': function (element, renderer) {
+    //         return true;
+    //     }
+    // };
+
+    // $('#cmd').click(function () {
+    //     doc.fromHTML($('#content').html(), 15, 15, {
+    //         'width': 170,
+    //             'elementHandlers': specialElementHandlers
+    //     });
+    // });
+    // const downloadpdf = ()=>{
+    //     doc.fromHTML(document.getElementById('root'), 15, 15, {
+    //         'width': 170,
+    //         'elementHandlers': specialElementHandlers
+    //     });
+    //     doc.save('sample-file.pdf');
+    // }
     return (
         // <table className='report-container printinvoice'>
         <div className='printinvoice'>
@@ -68,6 +108,7 @@ export const Printinvoice = () => {
                     :
                     <>
                         <div className="fixed-header header">
+                    {/* <button onClick={downloadpdf}>dp</button> */}
 
                             {/* <div className="page-header" > */}
 
