@@ -113,7 +113,10 @@ export const Printinvoice = () => {
                             {/* <div className="page-header" > */}
 
                             <div className='navbar1'>
-                                <div className='invoiceno'>INVOICE #{invoiceno}</div>
+                                <div className='invoiceno'>INVOICE #
+                                {/* {invoiceno} */}
+                                123456789
+                                </div>
                                 <img className='logo' src={logo} />
                             </div>
                             <div className='navbar2'>
