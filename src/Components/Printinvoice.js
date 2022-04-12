@@ -135,7 +135,8 @@ export const Printinvoice = () => {
                                         Ganesh Distributors TN LLC
                                     </div>
                                     Address: 1722 C west broad st, Cookeville, TN, 38501<br />
-                                    Call : +1-844-392-7867 Fax : (256) 513-4880<br />
+                                    Call : +1-844-392-7867
+                                    Fax : (256) 513-4880<br />
                                     www.cstoremaster.com<br />
                                     DID #17002438 (We Report MSA)<br />
                                 </div>
