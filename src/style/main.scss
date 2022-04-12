@@ -283,6 +283,10 @@ tr {
     margin: 20mm;
 }
 @media print {
+    // body{
+    //     width: 700px;
+    //     margin: auto;
+    // }
     thead {
         display: table-header-group;
     }

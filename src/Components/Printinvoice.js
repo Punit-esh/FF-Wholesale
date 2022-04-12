@@ -3,8 +3,15 @@ import { useParams } from 'react-router-dom'
 import logo from '../img/logo.png'
 import image from '../img/Capture.png'
 import { Table } from './Table'
+import html2pdf from 'html-to-pdf-js'
+// import html2canvas from 'html2canvas'
+// import jsPDF from 'jspdf'
+// import  html_to_pdf from 'html-pdf-node';
+// import Pdf from "react-to-pdf";
+
 
 export const Printinvoice = () => {
+    const ref = React.createRef();
     const { invoiceno } = useParams()
 
     const [data, setdata] = useState({})
@@ -20,26 +27,26 @@ export const Printinvoice = () => {
                 deliveryType: 'Pickup',
                 route: '-',
                 stop: '-',
-                TQ:96,
-                TST:'$46.21',
-                TCoT:'$8.90',
-                TCiT:'$0.00',
-                TT:'55.11',
-                OT:'(1) $13.99',
-                To:'(16) $271.83',
-                NTo:'(76) $1041.05',
-                Ci:'(3) $73.92',
-                payCheck:'$1,400.78',
-                payChangeback:'$0.00',
-                payoutstandingbal:'$0.00',
-                subT:'$1400.79',
-                shiping:'$0.00',
-                return:'$0.00',
-                discount:'$0.00',
-                grandT:'$1400.79',
-                deliverT:'$0.00',
-                collectedT:'$0.00',
-                T:'$1400.79',
+                TQ: 96,
+                TST: '$46.21',
+                TCoT: '$8.90',
+                TCiT: '$0.00',
+                TT: '55.11',
+                OT: '(1) $13.99',
+                To: '(16) $271.83',
+                NTo: '(76) $1041.05',
+                Ci: '(3) $73.92',
+                payCheck: '$1,400.78',
+                payChangeback: '$0.00',
+                payoutstandingbal: '$0.00',
+                subT: '$1400.79',
+                shiping: '$0.00',
+                return: '$0.00',
+                discount: '$0.00',
+                grandT: '$1400.79',
+                deliverT: '$0.00',
+                collectedT: '$0.00',
+                T: '$1400.79',
                 tableData: [
                     ...'11111111111111111111111111111'.split("").map(
                         (el, i) => {
@@ -76,9 +83,66 @@ export const Printinvoice = () => {
                 ]
             })
             setloader(false)
+            // window.print();
+            printDocument()
         }, 2000)
     }, [])
-    console.log(data);
+    // console.log(data);
+    const printDocument = () => {
+        html2pdf(document.body)
+        // element.dispatchEvent(
+        //     var c = new KeyboardEvent("keydown", {
+        //     key: 'p',
+        //     keyCode: 80, // example values.
+        //     which: 80,
+        //     ctrlKey: true,  // if you aren't going to use them.
+        // })
+        // var doc = new jsPDF();
+        // var specialElementHandlers = {
+        //         '#editor': function (element, renderer) {
+        //             return true;
+        //         }
+        //     };
+        // var makePDF = document.body;
+
+        // // fromHTML Method
+        // doc.html(makePDF, {
+        //             // 'width': 170,
+        //             // 'elementHandlers': specialElementHandlers
+        //         });
+        // doc.save("output.pdf");
+        // const input = document.getElementById('root');
+        // html2canvas(input)
+        //   .then((canvas) => {
+        //     const imgData = canvas.toDataURL('image/png');
+        //     const pdf = new jsPDF();
+        //     pdf.addImage(imgData, 'JPEG', 0, 0);
+        //     // pdf.output('dataurlnewwindow');
+        //     pdf.save("download.pdf");
+        //   });
+        // var html_to_pdf = require('html-pdf-node');
+
+        // let options = { format: 'A4' };
+        // // Example of options with args //
+        // // let options = { format: 'A4', args: ['--no-sandbox', '--disable-setuid-sandbox'] };
+
+        // let file = { content: document.getElementById('root').innerHTML };
+        // // or //
+        // // let file = { url: "https://example.com" };
+        // html_to_pdf.generatePdf(file, options).then(pdfBuffer => {
+        //     console.log("PDF Buffer:-", pdfBuffer);
+        // });
+        // var doc = new jsPDF();
+
+        // doc.html(document.body, {
+        //     callback: function (doc) {
+        //         doc.save();
+        //     },
+        //     x: 10,
+        //     y: 10
+        // });
+        // window.print()   
+    }
     // var doc = new jsPDF();
     // var specialElementHandlers = {
     //     '#editor': function (element, renderer) {
@@ -101,21 +165,19 @@ export const Printinvoice = () => {
     // }
     return (
         // <table className='report-container printinvoice'>
-        <div className='printinvoice'>
+        <div className='printinvoice' ref={ref}>
             {
                 loader ?
                     <h1>loading...</h1>
                     :
                     <>
                         <div className="fixed-header header">
-                    {/* <button onClick={downloadpdf}>dp</button> */}
-
-                            {/* <div className="page-header" > */}
-
+                {/* <button onClick={printDocument}>pd</button> */}
+                {/* <a href="https://restpack.io/html2pdf/save-as-pdf" target="_blank">Save this page as PDF</a> */}
                             <div className='navbar1'>
                                 <div className='invoiceno'>INVOICE #
-                                {/* {invoiceno} */}
-                                123456789
+                                    {/* {invoiceno} */}
+                                    123456789
                                 </div>
                                 <img className='logo' src={logo} />
                             </div>
@@ -174,7 +236,7 @@ export const Printinvoice = () => {
                                 <tr>
                                     <td>
                                         <div class="content">
-                                            <Table tabledata={data.tableData} data = {data} />
+                                            <Table tabledata={data.tableData} data={data} />
                                         </div>
                                     </td>
                                 </tr>

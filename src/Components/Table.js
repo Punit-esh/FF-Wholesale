@@ -5,21 +5,26 @@ export const Table = ({ tabledata, data }) => {
         <>
             <table className='table_data page' >
                 <thead>
-                    <div className='address_shipingmethod'>
-                        <div>
-                            <div className='address_shipingmethod_title'>ADDRESS</div>
-                            <div className='address_shipingmethod_body mr'>
-                                {data.address?.map(el => <>{el}<br /></>)}
+                    <tr>
+                        <td>
+
+                            <div className='address_shipingmethod'>
+                                <div>
+                                    <div className='address_shipingmethod_title'>ADDRESS</div>
+                                    <div className='address_shipingmethod_body mr'>
+                                        {data.address?.map((el,i) => <span id={i}>{el}<br /></span>)}
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className='address_shipingmethod_title ml'>SHIPPING METHOD</div>
+                                    <div className='address_shipingmethod_body ml'>
+                                        Delivery Type: {data.deliveryType}<br />
+                                        Route: {data.route}, Stop: {data.stop}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <div className='address_shipingmethod_title ml'>SHIPPING METHOD</div>
-                            <div className='address_shipingmethod_body ml'>
-                                Delivery Type: {data.deliveryType}<br />
-                                Route: {data.route}, Stop: {data.stop}
-                            </div>
-                        </div>
-                    </div>
+                        </td>
+                    </tr>
                     <tr className='table_heading'>
                         <td className='row1'>No</td>
                         <td className='row2'>PRODUCT</td>
@@ -31,20 +36,23 @@ export const Table = ({ tabledata, data }) => {
                         <td className='row8'>AMOUNT</td>
                     </tr>
                 </thead>
-                {
-                    tabledata?.map(el =>
-                        <tr className='table_row'>
-                            <td className='row1'>{el.id}</td>
-                            <td className='row2'>{el.product}</td>
-                            <td className='row3'>{el.qty}</td>
-                            <td className='row4'>{el.price}</td>
-                            <td className='row5'>{el.statetax}</td>
-                            <td className='row6'>{el.countytax}</td>
-                            <td className='row7'>{el.citytax}</td>
-                            <td className='row8'>{el.amount}</td>
-                        </tr>
-                    )
-                }
+                <tbody>
+
+                    {
+                        tabledata?.map((el,i) =>
+                            <tr key={i} className='table_row'>
+                                <td className='row1'>{el.id}</td>
+                                <td className='row2'>{el.product}</td>
+                                <td className='row3'>{el.qty}</td>
+                                <td className='row4'>{el.price}</td>
+                                <td className='row5'>{el.statetax}</td>
+                                <td className='row6'>{el.countytax}</td>
+                                <td className='row7'>{el.citytax}</td>
+                                <td className='row8'>{el.amount}</td>
+                            </tr>
+                        )
+                    }
+                </tbody>
             </table>
             <div className='page_footer'>
                 <div className='colm1_colm2'>
