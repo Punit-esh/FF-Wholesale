@@ -43,6 +43,7 @@ export const Printinvoice = () => {
         setdata({
           date: data.date == "" ? "-" : data.date,
           time: data.time == "" ? "-" : data.time,
+          invoiceno: data.invoiceno == "" ? "-" : data.invoiceno,
           orderno: data.orderno == "" ? "-" : data.orderno,
           orderrequired: data.orderrequired == "" ? "-" : data.orderrequired,
           address: data.address.length == 0 ? ["-"] : data.address,
@@ -154,7 +155,7 @@ export const Printinvoice = () => {
             <div className="navbar1">
               <div className="invoiceno">
                 INVOICE #{/* {invoiceno} */}
-                123456789
+                {data.invoiceno}
               </div>
               <img className="logo" src={logo} />
             </div>
