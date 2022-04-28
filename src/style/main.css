@@ -72,10 +72,11 @@ body {
 .printinvoice .navbar2 .detail1 {
   text-align: left;
   margin-left: 25px;
+  font-size: 19px;
 }
 
 .printinvoice .navbar2 .detail1 .orderno {
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .printinvoice .navbar2 .detail1 .order_required {
