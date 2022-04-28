@@ -1,7 +1,9 @@
-import React from 'react'
-
+import React from "react";
+import error from "../img/error-404.png";
 export const NotFound = () => {
   return (
-    <div>NotFound</div>
-  )
-}
+    <div className="notfound">
+      <img src={error} />
+    </div>
+  );
+};

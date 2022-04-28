@@ -10,7 +10,6 @@ body {
   max-width: 1200px;
   margin: auto;
   color: #000000;
-  padding-bottom: 30px;
 }
 
 @media screen and (max-width: 800px) {
@@ -104,7 +103,6 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  margin-top: 20px;
 }
 
 .printinvoice .address_shipingmethod > div {
@@ -141,6 +139,10 @@ body {
   width: 35%;
 }
 
+.printinvoice .table_data .row2.t-center {
+  text-align: center !important;
+}
+
 .printinvoice .table_data .row3,
 .printinvoice .table_data .row4,
 .printinvoice .table_data .row5,
@@ -154,6 +156,7 @@ body {
   border-bottom: 5px solid #cc0000;
   color: #e67f7f;
   font-weight: 700;
+  margin-top: 10px;
 }
 
 .printinvoice .table_data .table_heading,
@@ -211,11 +214,10 @@ body {
 }
 
 .printinvoice .page_footer .colm1_colm2 > div {
-  width: 50%;
+  width: 100%;
 }
 
 .printinvoice .page_footer .colm1 > div,
-.printinvoice .page_footer .colm2 > div,
 .printinvoice .page_footer .colm3 > div {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -226,13 +228,11 @@ body {
 }
 
 .printinvoice .page_footer .colm1 > div > span:first-child,
-.printinvoice .page_footer .colm2 > div > span:first-child,
 .printinvoice .page_footer .colm3 > div > span:first-child {
   text-align: left;
 }
 
 .printinvoice .page_footer .colm1 > div > span:last-child,
-.printinvoice .page_footer .colm2 > div > span:last-child,
 .printinvoice .page_footer .colm3 > div > span:last-child {
   text-align: right;
 }
@@ -245,14 +245,12 @@ body {
   padding-left: 20px;
 }
 
-.printinvoice .page_footer .colm1,
-.printinvoice .page_footer .colm2 {
-  font-size: 10px;
-  font-weight: 500;
+.printinvoice .page_footer .colm1 {
+  font-weight: 400;
+  font-size: 17px;
 }
 
-.printinvoice .page_footer .colm1 .line,
-.printinvoice .page_footer .colm2 .line {
+.printinvoice .page_footer .colm1 .line {
   height: 1px;
   width: 100%;
   background: -webkit-gradient(linear, left top, right top, color-stop(70%, #000), color-stop(30%, #fff));
@@ -313,7 +311,6 @@ body {
 .t-head,
 .footer,
 .t-foot {
-  height: 200px;
   max-width: 1200px;
   width: 100%;
   text-align: center;
@@ -331,10 +328,10 @@ table {
   margin-right: 0px;
 }
 
-thead {
+.table_data thead {
   position: -webkit-sticky;
   position: sticky;
-  top: 49px;
+  top: 82px;
   background: #ffffff;
 }
 
@@ -346,13 +343,45 @@ tr {
   page-break-inside: avoid;
 }
 
+.notfound {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.notfound img {
+  height: 30%;
+}
+
+.blankthead {
+  height: 187px;
+}
+
 @page {
   margin: 20mm;
 }
 
 @media print {
+  body {
+    width: 700px;
+    margin: 0;
+  }
   thead {
     display: table-header-group;
   }
+}
+
+.header,
+.t-head,
+.footer,
+.t-foot {
+  height: 200px;
 }
 /*# sourceMappingURL=main.css.map */
