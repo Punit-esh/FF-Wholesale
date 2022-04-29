@@ -1,8 +1,13 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import logo from "../img/logo.png";
+import { Table } from "./Table";
 
-export const CheckInvoice = ({ setdata }) => {
+export const CheckInvoice = () => {
+  const [data, setdata] = useState({});
+  const [loader, setloader] = useState(true);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -52,12 +57,68 @@ export const CheckInvoice = ({ setdata }) => {
           T: data.T == "" ? "-" : data.T,
           tableData: data.tableData == "" ? "-" : data.tableData,
         });
-        // setloader(false);
-        navigate("/generated-invoice");
+        setloader(false);
+        // navigate("/generated-invoice");
 
-        // printDocument();
+        setTimeout(() => printDocument(), 0);
       });
   }, []);
+  const printDocument = () => {
+    // code to print and download file converting from html to pdf
+    // html2pdf(document.body);
+    window.print();
+  };
 
-  return <div className="loading">Loading ...</div>;
+  return loader ? (
+    <div className="loading">Loading ...</div>
+  ) : (
+    <div className="printinvoice">
+      <div className="fixed-header header">
+        <div className="navbar1">
+          <div className="invoiceno">
+            INVOICE #{/* {invoiceno} */}
+            {data.invoiceno}
+          </div>
+          <img className="logo" src={logo} />
+        </div>
+        <div className="navbar2">
+          <div className="detail1">
+            {data.date} {data.time}
+            <br />
+            <div className="orderno">Order {data.orderno}</div>
+            <div className="order_required">{data.orderrequired}</div>
+          </div>
+          <div className="address">
+            <div className="add1">Ganesh Distributors TN LLC</div>
+            Address: 1722 C west broad st, Cookeville, TN, 38501
+            <br />
+            Call : +1-844-392-7867 Fax : (256) 513-4880
+            <br />
+            www.cstoremaster.com
+            <br />
+            DID #17002438 (We Report MSA)
+            <br />
+          </div>
+        </div>
+      </div>
+      <table>
+        <thead className="blankthead">
+          <tr>
+            <th>
+              <div className="t-head">&nbsp;</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div className="content">
+                <Table tabledata={data.tableData} data={data} />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
 };
