@@ -60,7 +60,7 @@ export const CheckInvoice = () => {
         setloader(false);
         // navigate("/generated-invoice");
 
-        setTimeout(() => printDocument(), 0);
+        setTimeout(() => printDocument(), 1000);
       });
   }, []);
   const printDocument = () => {
