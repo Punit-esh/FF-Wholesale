@@ -79,7 +79,9 @@ export const CheckInvoice = () => {
             INVOICE #{/* {invoiceno} */}
             {data.invoiceno}
           </div>
-          <img className="logo" src={logo} />
+          <div className="logo">
+            <img src={logo} width="100%" height="100%" />
+          </div>
         </div>
         <div className="navbar2">
           <div className="detail1">
