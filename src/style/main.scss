@@ -325,3 +325,24 @@ tr {
 .t-foot {
     height: 200px;
 }
+.phone_err {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ff0000;
+    text-align: center;
+}
+@media screen and (max-width: 700px) {
+    .phone_err {
+        display: flex;
+    }
+    .loading,
+    .printinvoice {
+        display: none;
+    }
+}
