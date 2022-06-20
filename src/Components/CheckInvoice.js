@@ -23,7 +23,7 @@ export const CheckInvoice = () => {
     axios
       .get(
         "https://script.google.com/macros/s/AKfycbwfcD6p2VLqTXC1fElUt6xsfq_UFY1xOIpHjxgj5A_yj6NZGMdParAHct7yx2Br6gfEjg/exec" +
-          window.location.search
+        window.location.search
       )
       .then((response) => response.data)
       .then((data) => {
@@ -104,9 +104,11 @@ export const CheckInvoice = () => {
             </div>
             <div className="address">
               <div className="add1">Ganesh Distributors TN LLC</div>
-              Address: 1722 C west broad st, Cookeville, TN, 38501
+              {/* Address: 1722 C west broad st, Cookeville, TN, 38501 */}
+              Address: Skyline Mart, 20482 AL-79, Scottsboro, AL 35768
               <br />
-              Call : +1-844-392-7867 Fax : (256) 513-4880
+              {/* Call : +1-844-392-7867 Fax : (256) 513-4880 */}
+              Call : +1 (931) 636-8890
               <br />
               www.cstoremaster.com
               <br />
