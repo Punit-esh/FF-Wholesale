@@ -3,8 +3,8 @@ import logo from "./logo.svg";
 import "./style/main.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { NotFound } from "./Components/NotFound";
-import { Printinvoice } from "./Components/Printinvoice";
-import { useState } from "react";
+// import { Printinvoice } from "./Components/Printinvoice";
+// import { useState } from "react";
 import { CheckInvoice } from "./Components/CheckInvoice";
 
 function App() {

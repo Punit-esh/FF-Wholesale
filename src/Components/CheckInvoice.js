@@ -12,7 +12,7 @@ export const CheckInvoice = () => {
 
   useEffect(() => {
     let search_var = window.location.search.substring(1).split("&");
-    console.log(search_var);
+    // console.log(search_var);
     if (
       search_var[0].split("=")[0] != "orderid" ||
       search_var[1].split("=")[0] != "token"
@@ -28,7 +28,7 @@ export const CheckInvoice = () => {
       .then((response) => response.data)
       .then((data) => {
         if (data.error) {
-          navigate("/notfound");
+          // navigate("/notfound");
           return;
         }
         setdata({
@@ -61,7 +61,7 @@ export const CheckInvoice = () => {
         // navigate("/generated-invoice");
 
         if (window.innerWidth >= 700) {
-          setTimeout(() => printDocument(), 1000);
+          // setTimeout(() => printDocument(), 1000);
         }
       });
   }, []);
@@ -77,6 +77,7 @@ export const CheckInvoice = () => {
       </div>
     );
   }
+  console.log(data);
 
   return loader ? (
     <>

@@ -1,10 +1,10 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import logo from "../img/logo.png";
-import image from "../img/Capture.png";
+// import image from "../img/Capture.png";
 import { Table } from "./Table";
-import html2pdf from "html-to-pdf-js";
-import axios from "axios";
+// import html2pdf from "html-to-pdf-js";
+// import axios from "axios";
 // import html2canvas from 'html2canvas'
 // import jsPDF from 'jspdf'
 // import  html_to_pdf from 'html-pdf-node';

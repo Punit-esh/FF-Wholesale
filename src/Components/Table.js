@@ -63,14 +63,14 @@ export const Table = ({ tabledata, data }) => {
               <td className={"row2" + (el.product == "" ? " t-center" : "")}>
                 {el.product == "" ? "-" : el.product}
               </td>
-              <td className="row3">{el.qty == "" ? "-" : el.qty}</td>
-              <td className="row4">{el.price == "" ? "-" : el.price}</td>
-              <td className="row5">{el.statetax == "" ? "-" : el.statetax}</td>
+              <td className="row3">{el.qty}</td>
+              <td className="row4">$ {el.price.trim() == "" ? "0.00" : Number(el.price).toFixed(2)}</td>
+              <td className="row5">$ {el.statetax.trim() == "" ? "0.00" : Number(el.statetax).toFixed(2)}</td>
               <td className="row6">
-                {el.countytax == "" ? "-" : el.countytax}
+                $ {el.countytax.trim() == "" ? "0.00" : el.countytax}
               </td>
-              <td className="row7">{el.citytax == "" ? "-" : el.citytax}</td>
-              <td className="row8">{el.amount == "" ? "-" : el.amount}</td>
+              <td className="row7">$ {el.citytax.trim() == "" ? "0.00" : Number(el.citytax).toFixed(2)}</td>
+              <td className="row8">$ {el.amount.trim() == "" ? "0.00" : Number(el.amount).toFixed(2)}</td>
             </tr>
           ))}
         </tbody>
@@ -84,20 +84,20 @@ export const Table = ({ tabledata, data }) => {
             </div>
             <div>
               <span>Total State Tax :</span>
-              <span>{data.TST}</span>
+              <span>$ {Number(data.TST).toFixed(2)}</span>
             </div>
             <div>
               <span>Total County Tax :</span>
-              <span>{data.TCoT}</span>
+              <span>$ {Number(data.TCoT).toFixed(2)}</span>
             </div>
             <div>
               <span>Total City Tax :</span>
-              <span>{data.TCiT}</span>
+              <span>$ {Number(data.TCiT).toFixed(2)}</span>
             </div>
             <div className="line"></div>
             <div>
               <span>TOTAL TAX :</span>
-              <span>{data.TT}</span>
+              <span>$ {Number(data.TT).toFixed(2)}</span>
             </div>
             <div className="line"></div>
             {/* <div>
@@ -139,37 +139,37 @@ export const Table = ({ tabledata, data }) => {
         <div className="colm3">
           <div>
             <span>Subtotal </span>
-            <span>{data.subT}</span>
+            <span>$ {Number(data.subT).toFixed(2)}</span>
           </div>
           <div>
             <span>Shipping </span>
-            <span>{data.shipping}</span>
+            <span>$ {Number(data.shipping).toFixed(2)}</span>
           </div>
           <div>
             <span>Return </span>
-            <span>{data.return}</span>
+            <span>$ {Number(data.return).toFixed(2)}</span>
           </div>
           <div>
             <span>Total Discount </span>
-            <span>{data.discount}</span>
+            <span>$ {Number(data.discount).toFixed(2)}</span>
           </div>
           <div className="line"></div>
           <div>
             <span>Grand Total </span>
-            <span>{data.grandT}</span>
+            <span>$ {Number(data.grandT).toFixed(2)}</span>
           </div>
           <div>
             <span>Delivered Tote Amount</span>
-            <span>{data.deliverT}</span>
+            <span>$ {Number(data.deliverT).toFixed(2)}</span>
           </div>
           <div>
             <span>Collected Tote Amount</span>
-            <span>{data.collectedT}</span>
+            <span>$ {Number(data.collectedT).toFixed(2)}</span>
           </div>
           <div className="line"></div>
           <div className="bold">
             <span>Total :</span>
-            <span className="red">{data.T}</span>
+            <span className="red">$ {Number(data.T).toFixed(2)}</span>
           </div>
           <div className="line"></div>
         </div>
@@ -182,6 +182,9 @@ export const Table = ({ tabledata, data }) => {
         pay your reasonable attorney’s fees and costs of collection should I
         fail to pay as agreed. Any check returned for insufficient funds or stop
         payment shall result in a fee of $30 charged to customer Thank You!
+      </div>
+      <div className="print_btn" onClick={() => { window.print(); }}>
+        Print
       </div>
     </>
   );

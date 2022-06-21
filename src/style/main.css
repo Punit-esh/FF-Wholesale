@@ -361,20 +361,6 @@ tr {
   height: 187px;
 }
 
-@page {
-  margin: 20mm;
-}
-
-@media print {
-  body {
-    width: 700px;
-    margin: 0;
-  }
-  thead {
-    display: table-header-group;
-  }
-}
-
 .header,
 .t-head,
 .footer,
@@ -397,6 +383,38 @@ tr {
   font-weight: 600;
   color: #ff0000;
   text-align: center;
+}
+
+.print_btn {
+  background: #ff0000;
+  color: #fff;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+@page {
+  margin: 20mm;
+}
+
+@media print {
+  body {
+    width: 700px;
+    margin: 0;
+  }
+  thead {
+    display: table-header-group;
+  }
+  .print_btn {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 700px) {
