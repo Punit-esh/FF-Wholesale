@@ -36,8 +36,8 @@ export const CheckInvoice = () => {
           time: data.time == "" ? "-" : data.time,
           invoiceno: data.invoiceno == "" ? "-" : data.invoiceno,
           orderno: data.orderno == "" ? "-" : data.orderno,
-          orderrequired:
-            "The order required Alabama state and Jackson county stamp",
+          // orderrequired:
+          //   "The order required Alabama state and Jackson county stamp",
           address: data.address.length == 0 ? ["-"] : data.address,
           deliveryType: data.deliveryType == "" ? "-" : data.deliveryType,
           route: data.route == "" ? "-" : data.route,
@@ -101,19 +101,23 @@ export const CheckInvoice = () => {
               {data.date} {data.time}
               <br />
               <div className="orderno">Order {data.orderno}</div>
-              <div className="order_required">{data.orderrequired}</div>
+              {/* <div className="order_required">{data.orderrequired}</div> */}
             </div>
             <div className="address">
-              <div className="add1">Ganesh Distributors TN LLC</div>
+              <div className="add1">
+                F&F Wholesale
+              </div>
               {/* Address: 1722 C west broad st, Cookeville, TN, 38501 */}
-              Address: Skyline Mart, 20482 AL-79, Scottsboro, AL 35768
+              Address: Skyline Mart, 20482 AL-79,
+              <br />
+              Scottsboro, AL 35768
               <br />
               {/* Call : +1-844-392-7867 Fax : (256) 513-4880 */}
               Call : +1 (931) 636-8890
               <br />
-              www.cstoremaster.com
-              <br />
-              DID #17002438 (We Report MSA)
+              {/* www.cstoremaster.com */}
+              {/* <br /> */}
+              {/* DID #17002438 (We Report MSA) */}
               <br />
             </div>
           </div>
