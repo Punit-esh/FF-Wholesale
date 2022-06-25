@@ -73,7 +73,7 @@ export const CheckInvoice = () => {
   if (window.innerWidth < 700) {
     return (
       <div className="phone_err">
-        <span>This page cannot be displayed on mobile devices</span>
+        <span>Please view it on your Desktop</span>
       </div>
     );
   }
