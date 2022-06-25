@@ -67,7 +67,7 @@ export const Table = ({ tabledata, data }) => {
               <td className="row4">$ {el.price.trim() == "" ? "0.00" : Number(el.price).toFixed(2)}</td>
               <td className="row5">$ {el.statetax.trim() == "" ? "0.00" : Number(el.statetax).toFixed(2)}</td>
               <td className="row6">
-                $ {el.countytax.trim() == "" ? "0.00" : el.countytax}
+                $ {el.countytax.trim() == "" ? "0.00" : Number(el.countytax).toFixed(2)}
               </td>
               <td className="row7">$ {el.citytax.trim() == "" ? "0.00" : Number(el.citytax).toFixed(2)}</td>
               <td className="row8">$ {el.amount.trim() == "" ? "0.00" : Number(el.amount).toFixed(2)}</td>
